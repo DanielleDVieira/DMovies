@@ -8,6 +8,24 @@
     <title>DMovies</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#4584e2">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ee1b1b">
 </head>
 
 <body>
@@ -41,9 +59,10 @@
 
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar Filmes"
+                    <input class="form-control mr-sm-2" id="search_pesquisa" type="text" placeholder="Pesquisar Filmes"
                         aria-label="Search">
-                    <button class="btn my-2 my-sm-0" type="submit"><img src="Imagens/lupa1.png" alt="Lupa"></button>
+                    <button class="btn my-2 my-sm-0" type="submit" id="btn_Pesquisar"><img src="Imagens/lupa1.png"
+                            alt="Lupa"></button>
                 </form>
             </div>
         </nav>
@@ -205,29 +224,54 @@
                     <div class="conteudo_titulo">
                         <h1>Em destaque</h1>
                     </div>
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle dropdown_destaque" type="button" id="dropdownMenu2"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Categoria: Todos
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">Aventura</button>
-                            <button class="dropdown-item" type="button">Romance</button>
-                            <button class="dropdown-item" type="button">Comédia</button>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+                <div class="col-md-12 col-lg-10 d-flex flex-wrap conteudo_destaques" id="lista_filmes">
+                    <div class="card" style="width: 18rem;">
+                        <img src="Imagens/homemaranha.jpg" class="card-img-top" alt="Homem-Aranha">
+                        <div class="card-body">
+                            <h5 class="card-title">Homem-Aranha</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's
+                                content.</p>
+                            <p>Data de Lançamento: 2020-10-23</p>
+                            <a href="#" class="btn btn-primary" id="acesse">Acesse</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-1"></div>
-                <div class="col-md-12 col-lg-10 d-flex flex-wrap conteudo_destaques">
-                    <img src="Imagens/homemaranha.jpg" alt="Homem-Aranha">
-                    <img src="Imagens/x-men.jpg" alt="X-Men">
-                    <img src="Imagens/JOKER.jpg" alt="Coringa">
-                    <img src="Imagens/reileao.jpg" alt="Rei Leão">
-                </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-11 d-flex justify-content-end botao_carregar_filmes">
-                    <button type="button" class="btn btn-light"><b>+</b> Carregar mais filmes</button>
+                    <div class="card" style="width: 18rem;">
+                        <img src="Imagens/x-men.jpg" class="card-img-top" alt="X-Men">
+                        <div class="card-body">
+                            <h5 class="card-title">X-Men</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's
+                                content.</p>
+                            <p>Data de Lançamento: 2020-10-23</p>
+                            <a href="#" class="btn btn-primary" id="acesse">Acesse</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="Imagens/JOKER.jpg" class="card-img-top" alt="Coringa">
+                        <div class="card-body">
+                            <h5 class="card-title">Coringa</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's
+                                content.</p>
+                            <p>Data de Lançamento: 2020-10-23</p>
+                            <a href="#" class="btn btn-primary">Acesse</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="Imagens/reileao.jpg" class="card-img-top" alt="Rei Leão">
+                        <div class="card-body">
+                            <h5 class="card-title">Rei Leão</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's
+                                content.</p>
+                            <p>Data de Lançamento: 2020-10-23</p>
+                            <a href="#" class="btn btn-primary">Acesse</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-1"></div>
@@ -481,15 +525,14 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
